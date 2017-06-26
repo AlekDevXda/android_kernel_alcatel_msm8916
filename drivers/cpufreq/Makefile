@@ -10,6 +10,17 @@ obj-$(CONFIG_CPU_FREQ_GOV_USERSPACE)	+= cpufreq_userspace.o
 obj-$(CONFIG_CPU_FREQ_GOV_ONDEMAND)	+= cpufreq_ondemand.o
 obj-$(CONFIG_CPU_FREQ_GOV_CONSERVATIVE)	+= cpufreq_conservative.o
 obj-$(CONFIG_CPU_FREQ_GOV_INTERACTIVE)	+= cpufreq_interactive.o
+obj-$(CONFIG_CPU_FREQ_GOV_DARKNESS) 	+= cpufreq_darkness.o
+obj-$(CONFIG_CPU_FREQ_GOV_BARRY_ALLEN)	+= cpufreq_barry_allen.o
+obj-$(CONFIG_CPU_FREQ_GOV_ELECTRODEMAND)+= cpufreq_electrodemand.o
+obj-$(CONFIG_CPU_FREQ_GOV_AUTHORITY)    += cpufreq_authority.o
+obj-$(CONFIG_CPU_FREQ_GOV_SMARTMAX_EPS) += cpufreq_smartmax_eps.o
+obj-$(CONFIG_CPU_FREQ_GOV_PEGASUSQ)	+= cpufreq_pegasusq.o
+obj-$(CONFIG_CPU_FREQ_GOV_HOTPLUG)	+= cpufreq_hotplug.o
+obj-$(CONFIG_CPU_FREQ_GOV_LIONFISH)	+= cpufreq_lionfish.o
+obj-$(CONFIG_CPU_FREQ_GOV_YANKACTIVE)	+= cpufreq_yankactive.o
+obj-$(CONFIG_CPU_FREQ_GOV_BIOSHOCK)	+= cpufreq_bioshock.o
+obj-$(CONFIG_CPU_FREQ_GOV_BLU_ACTIVE)   += cpufreq_blu_active.o
 obj-$(CONFIG_CPU_FREQ_GOV_COMMON)		+= cpufreq_governor.o
 obj-$(CONFIG_CPU_BOOST)			+= cpu-boost.o
 

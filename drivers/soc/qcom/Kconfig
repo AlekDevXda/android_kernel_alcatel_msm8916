@@ -573,4 +573,15 @@ config MSM_PERFORMANCE_HOTPLUG_ON
 
 source "drivers/soc/qcom/memshare/Kconfig"
 
+
+config FORCE_FAST_CHARGE
+	bool "Force faster charge rate for AC/USB"
+	default y
+	help
+	  This feature provides access to certain boot information
+	  from both kernel context (via function call) and user
+	  context (via /proc/bootinfo).
+	  This allows users to override default charge rate for both USB and AC
+	  charger input current
+
 endif # ARCH_MSM
