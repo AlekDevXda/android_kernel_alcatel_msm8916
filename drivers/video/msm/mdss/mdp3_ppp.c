@@ -1,3 +1,4 @@
+
 /* Copyright (c) 2007, 2013-2016, The Linux Foundation. All rights reserved.
  * Copyright (C) 2007 Google Incorporated
  *
@@ -37,6 +38,7 @@
 #define MDP_PPP_MAX_BPP 4
 #define MDP_PPP_DYNAMIC_FACTOR 3
 #define MDP_PPP_MAX_READ_WRITE 3
+#define MDP_PPP_MAX_WIDTH	0xFFF
 #define ENABLE_SOLID_FILL	0x2
 #define DISABLE_SOLID_FILL	0x0
 #define BLEND_LATENCY		3
@@ -145,6 +147,11 @@ int mdp3_ppp_get_img(struct mdp_img *img, struct mdp_blit_req *req,
 
 	if (bpp <= 0) {
 		pr_err("%s incorrect format %d\n", __func__, img->format);
+		return -EINVAL;
+	}
+
+	if (img->width > MDP_PPP_MAX_WIDTH) {
+		pr_err("%s incorrect width %d\n", __func__, img->width);
 		return -EINVAL;
 	}
 
