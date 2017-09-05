@@ -1,3 +1,4 @@
+
 /* Copyright (c) 2012-2014, The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -791,12 +792,16 @@ int ipa_query_rt_index(struct ipa_ioc_get_rt_tbl_indx *in)
 		return -EINVAL;
 	}
 
+	mutex_lock(&ipa_ctx->lock);
 	/* check if this table exists */
 	entry = __ipa_find_rt_tbl(in->ip, in->name);
-	if (!entry)
+	if (!entry){
+		mutex_unlock(&ipa_ctx->lock);
 		return -EFAULT;
+	}
 
 	in->idx  = entry->idx;
+	mutex_unlock(&ipa_ctx->lock);
 	return 0;
 }
 
